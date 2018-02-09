@@ -1,186 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F5F5F5">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/button_rounded"
-        android:onClick="resetScore"
-        android:text="@string/reset"
-        android:layout_margin="4dp"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/wrestlers"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="16dp" />
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:background="#B3F5F5F5">
+        android:background="#F5F5F5"
+        android:orientation="vertical">
+
+        <ImageView
+            android:contentDescription="@string/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/wrestlers"
+            android:layout_margin="16dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            tools:context=".MainActivity"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp">
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="@string/home"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
 
-            <TextView
-                android:id="@+id/home_score"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:text="@string/home"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/home_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/_0"
+                    android:textColor="@android:color/black"
+                    android:textSize="56sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_corners_red"
+                    android:onClick="addPinPointsHome"
+                    android:text="@string/pin"
+                    android:textColor="@color/red_text" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_corners_red"
+                    android:onClick="addTechnicalPointsHome"
+                    android:text="@string/technical"
+                    android:textColor="@color/red_text" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_corners_red"
+                    android:onClick="addMajorPointsHome"
+                    android:text="@string/major_decision"
+                    android:textColor="@color/red_text" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_corners_red"
+                    android:onClick="addRegularPointsHome"
+                    android:text="@string/regular_decision"
+                    android:textColor="@color/red_text" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_rounded_corners_red"
+                    android:onClick="addForfeitPointsHome"
+                    android:text="@string/forfeit_injury_dq"
+                    android:textColor="@color/red_text" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray">
+
+            </View>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="56sp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addPinPointsHome"
-                android:text="@string/pin"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button_rounded_corners_red"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:text="@string/visitor"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addTechnicalPointsHome"
-                android:text="@string/technical"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button_rounded_corners_red"/>
+                <TextView
+                    android:id="@+id/visitor_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/_0"
+                    android:textColor="@android:color/black"
+                    android:textSize="56sp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:onClick="addMajorPointsHome"
-                android:text="@string/major_decision"
-                android:background="@drawable/button_rounded_corners_red"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_blue"
+                    android:onClick="addPinPointsVisitor"
+                    android:text="@string/pin"
+                    android:textColor="@color/blue_text" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:onClick="addRegularPointsHome"
-                android:text="@string/regular_decision"
-                android:background="@drawable/button_rounded_corners_red"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_blue"
+                    android:onClick="addTechnicalPointsVisitor"
+                    android:text="@string/technical"
+                    android:textColor="@color/blue_text" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addForfeitPointsHome"
-                android:text="@string/forfeit_injury_dq"
-                android:background="@drawable/button_rounded_corners_red"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_blue"
+                    android:onClick="addMajorPointsVisitor"
+                    android:text="@string/major_decision"
+                    android:textColor="@color/blue_text" />
 
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_rounded_blue"
+                    android:onClick="addRegularPointsVisitor"
+                    android:text="@string/regular_decision"
+                    android:textColor="@color/blue_text" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_rounded_blue"
+                    android:onClick="addForfeitPointsVisitor"
+                    android:text="@string/forfeit_injury_dq"
+                    android:textColor="@color/blue_text" />
+
+            </LinearLayout>
         </LinearLayout>
 
-        <View
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray">
-
-        </View>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            tools:context=".MainActivity"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp">
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_rounded"
+            android:onClick="resetScore"
+            android:text="@string/reset" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="@string/visitor"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textAllCaps="true"/>
-
-            <TextView
-                android:id="@+id/visitor_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/_0"
-                android:textColor="#000000"
-                android:textSize="56sp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addPinPointsVisitor"
-                android:text="@string/pin"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button_rounded_blue"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addTechnicalPointsVisitor"
-                android:text="@string/technical"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button_rounded_blue"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:onClick="addMajorPointsVisitor"
-                android:text="@string/major_decision"
-                android:background="@drawable/button_rounded_blue"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:onClick="addRegularPointsVisitor"
-                android:text="@string/regular_decision"
-                android:background="@drawable/button_rounded_blue"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addForfeitPointsVisitor"
-                android:text="@string/forfeit_injury_dq"
-                android:background="@drawable/button_rounded_blue"/>
-
-        </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>
