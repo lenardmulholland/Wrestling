@@ -7,190 +7,108 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F5F5F5"
         android:orientation="vertical">
 
         <ImageView
+            style="@style/ImageView"
             android:contentDescription="@string/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/wrestlers"
-            android:layout_margin="16dp"/>
+            android:src="@drawable/wrestlers" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
+                style="@style/ListView"
                 tools:context=".MainActivity">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:padding="4dp"
-                    android:text="@string/home"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TeamTextView"
+                    android:text="@string/home" />
 
                 <TextView
                     android:id="@+id/home_score"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/_0"
-                    android:textColor="@android:color/black"
-                    android:textSize="56sp" />
+                    style="@style/TeamTextView.ScoreTextView"
+                    android:text="@string/_0" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_corners_red"
+                    style="@style/HomeButton"
                     android:onClick="addPinPointsHome"
-                    android:text="@string/pin"
-                    android:textColor="@color/red_text" />
+                    android:text="@string/pin" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_corners_red"
+                    style="@style/HomeButton"
                     android:onClick="addTechnicalPointsHome"
-                    android:text="@string/technical"
-                    android:textColor="@color/red_text" />
+                    android:text="@string/technical" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_corners_red"
+                    style="@style/HomeButton"
                     android:onClick="addMajorPointsHome"
-                    android:text="@string/major_decision"
-                    android:textColor="@color/red_text" />
+                    android:text="@string/major_decision" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_corners_red"
+                    style="@style/HomeButton"
                     android:onClick="addRegularPointsHome"
-                    android:text="@string/regular_decision"
-                    android:textColor="@color/red_text" />
+                    android:text="@string/regular_decision" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_rounded_corners_red"
+                    style="@style/HomeButton"
                     android:onClick="addForfeitPointsHome"
-                    android:text="@string/forfeit_injury_dq"
-                    android:textColor="@color/red_text" />
+                    android:text="@string/forfeit_injury_dq" />
 
             </LinearLayout>
 
             <View
-                android:layout_width="4dp"
+                android:layout_width="@dimen/dividing_bar_width"
                 android:layout_height="match_parent"
                 android:background="@android:color/darker_gray">
-
             </View>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
+                style="@style/ListView"
                 tools:context=".MainActivity">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:padding="4dp"
-                    android:text="@string/visitor"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TeamTextView"
+                    android:text="@string/visitor" />
 
                 <TextView
                     android:id="@+id/visitor_score"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/_0"
-                    android:textColor="@android:color/black"
-                    android:textSize="56sp" />
+                    style="@style/TeamTextView.ScoreTextView"
+                    android:text="@string/_0" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_blue"
+                    style="@style/HomeButton.VisitorButton"
                     android:onClick="addPinPointsVisitor"
-                    android:text="@string/pin"
-                    android:textColor="@color/blue_text" />
+                    android:text="@string/pin" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_blue"
+                    style="@style/HomeButton.VisitorButton"
                     android:onClick="addTechnicalPointsVisitor"
-                    android:text="@string/technical"
-                    android:textColor="@color/blue_text" />
+                    android:text="@string/technical" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_blue"
+                    style="@style/HomeButton.VisitorButton"
                     android:onClick="addMajorPointsVisitor"
-                    android:text="@string/major_decision"
-                    android:textColor="@color/blue_text" />
+                    android:text="@string/major_decision" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/button_rounded_blue"
+                    style="@style/HomeButton.VisitorButton"
                     android:onClick="addRegularPointsVisitor"
-                    android:text="@string/regular_decision"
-                    android:textColor="@color/blue_text" />
+                    android:text="@string/regular_decision" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_rounded_blue"
+                    style="@style/HomeButton.VisitorButton"
                     android:onClick="addForfeitPointsVisitor"
-                    android:text="@string/forfeit_injury_dq"
-                    android:textColor="@color/blue_text" />
+                    android:text="@string/forfeit_injury_dq" />
 
             </LinearLayout>
         </LinearLayout>
 
         <Button
             android:id="@+id/reset_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:background="@drawable/button_rounded"
+            style="@style/ResetButton"
             android:onClick="resetScore"
             android:text="@string/reset" />
 

@@ -6,6 +6,64 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/image_margin</item>
+        <item name="android:layout_marginRight">@dimen/image_margin</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="ListView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/list_margin</item>
+        <item name="android:layout_marginEnd">@dimen/list_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+
+    <style name="TeamTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingBottom">@dimen/team_padding</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/team_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TeamTextView.ScoreTextView">
+        <item name="android:textSize">@dimen/score_text</item>
+        <item name="android:paddingBottom">@dimen/score_padding</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="HomeButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_rounded_corners_red</item>
+        <item name="android:textColor">@color/red_text</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin</item>
+    </style>
+
+    <style name="HomeButton.VisitorButton">
+        <item name="android:background">@drawable/button_rounded_blue</item>
+        <item name=" android:textColor">@color/blue_text</item>
+    </style>
+
+    <style name="ResetButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_rounded</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
     </style>
 
 </resources>
