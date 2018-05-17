@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.lang.reflect.Method;
+
 public class MainActivity extends AppCompatActivity {
 
     int scoreHome;
@@ -22,133 +24,101 @@ public class MainActivity extends AppCompatActivity {
             scoreViewVisitor = findViewById(R.id.visitor_score);
     }
 
-    /**
-     * Saves scores when orientation changes
-     */
+    //Saves scores when orientation changes
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putInt("scoreHome", scoreHome);
-        savedInstanceState.putInt("scoreVisitor", scoreVisitor);
+        savedInstanceState.putInt("savedScoreHome", scoreHome);
+        savedInstanceState.putInt("savedScoreVisitor", scoreVisitor);
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    /**
-     * Restores scores when orientation changes
-     */
+    //Restores scores when orientation changes
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         setContentView(R.layout.activity_main);
-        scoreHome = savedInstanceState.getInt("scoreHome");
+        scoreHome = savedInstanceState.getInt("savedScoreHome");
         scoreViewHome = findViewById(R.id.home_score);
         scoreViewHome.setText(String.valueOf(scoreHome));
-        scoreVisitor = savedInstanceState.getInt("scoreVisitor");
+        scoreVisitor = savedInstanceState.getInt("savedScoreVisitor");
         scoreViewVisitor = findViewById(R.id.visitor_score);
         scoreViewVisitor.setText(String.valueOf(scoreVisitor));
     }
 
-    /**
-     * Displays the given score for Home.
-     */
+    //Displays the given score for Home
     public void displayForHome(int score) {
         scoreViewHome.setText(String.valueOf(score));
     }
 
-    /**
-     * Displays the given score for Visitor.
-     */
+    //Displays the given score for Visitor
     public void displayForVisitor(int score) {
         scoreViewVisitor.setText(String.valueOf(score));
     }
 
-    /**
-     * This method is called when the pin button is pressed for Home.
-     */
-    public void addPinPointsHome(View view) {
+    //Method called when Pin button for Home is pressed
+     public void addPinPointsHome(View view) {
         scoreHome = scoreHome + 6;
         displayForHome(scoreHome);
     }
 
-    /**
-     * This method is called when the Technical button is pressed for Home.
-     */
-    public void addTechnicalPointsHome(View view) {
+    //Method called when Technical button for Home is pressed
+     public void addTechnicalPointsHome(View view) {
         scoreHome = scoreHome + 5;
         displayForHome(scoreHome);
     }
 
-    /**
-     * This method is called when the Major Decision button is pressed for Home.
-     */
-    public void addMajorPointsHome(View view) {
+    //Method called when Major Decision button for Home is pressed
+     public void addMajorPointsHome(View view) {
         scoreHome = scoreHome + 4;
         displayForHome(scoreHome);
     }
 
-    /**
-     * This method is called when the Regular Decision button is pressed for Home.
-     */
-    public void addRegularPointsHome(View view) {
+    //Method called when Regular Decision button for Home is pressed
+     public void addRegularPointsHome(View view) {
         scoreHome = scoreHome + 3;
         displayForHome(scoreHome);
     }
 
-    /**
-     * This method is called when the Forfeit, Injury, DQ button is pressed for Home.
-     */
-    public void addForfeitPointsHome(View view) {
+    //Method called when Forfeit, Injury, DQ button for Home is pressed
+     public void addForfeitPointsHome(View view) {
         scoreHome = scoreHome + 6;
         displayForHome(scoreHome);
     }
 
-    /**
-     * This method is called when the Pin button is pressed for Visitor.
-     */
-    public void addPinPointsVisitor(View view) {
+    //Method called when Pin button for Visitor is pressed
+     public void addPinPointsVisitor(View view) {
         scoreVisitor = scoreVisitor + 6;
         displayForVisitor(scoreVisitor);
     }
 
-    /**
-     * This method is called when the Technical button is pressed for Visitor.
-     */
-    public void addTechnicalPointsVisitor(View view) {
+    //Method called when Technical button for Visitor is pressed
+     public void addTechnicalPointsVisitor(View view) {
         scoreVisitor = scoreVisitor + 5;
         displayForVisitor(scoreVisitor);
     }
 
-    /**
-     * This method is called when the Major Decision button is pressed for Visitor.
-     */
-    public void addMajorPointsVisitor(View view) {
+    //Method called when Major Decision button for Visitor is pressed
+     public void addMajorPointsVisitor(View view) {
         scoreVisitor = scoreVisitor + 4;
         displayForVisitor(scoreVisitor);
     }
 
-    /**
-     * This method is called when the Regular Decision button is pressed for Visitor.
-     */
-    public void addRegularPointsVisitor(View view) {
+    //Method called when Regular Decision button for Visitor is pressed
+     public void addRegularPointsVisitor(View view) {
         scoreVisitor = scoreVisitor + 3;
         displayForVisitor(scoreVisitor);
     }
 
-    /**
-     * This method is called when the Forfeit, Injury, DQ button is pressed for Visitor.
-     */
-    public void addForfeitPointsVisitor(View view) {
+    //Method called when Forfeit, Injury, DQ button for Visitor is pressed
+     public void addForfeitPointsVisitor(View view) {
         scoreVisitor = scoreVisitor + 6;
         displayForVisitor(scoreVisitor);
     }
 
-
-    /**
-     * This method is called when the reset button is pressed.
-     */
-    public void resetScore(View view) {
+    //Method called when reset button is pressed.
+     public void resetScore(View view) {
         scoreHome = 0;
         scoreVisitor = 0;
         displayForHome(scoreHome);
         displayForVisitor(scoreVisitor);
     }
-
 }

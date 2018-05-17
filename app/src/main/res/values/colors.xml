@@ -6,6 +6,7 @@
     <color name="red_button">#D50000</color>
     <color name="blue_button">#1565C0</color>
     <color name="button">#CFD8DC</color>
+    <color name="buttonStroke">#BDBDBD</color>
     <color name="background">#F5F5F5</color>
     <color name="translucent_background">#B3F5F5F5</color>
     <color name="blue_text">#E3F2FD</color>
